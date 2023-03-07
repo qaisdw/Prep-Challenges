@@ -97,14 +97,17 @@ const objLat = (obj) => {
 
 const cvFormatter = (arr) => {
     // write your code here
-    const finalArray=[];
     
     const output = arr
-     .filter( user => user.yearsOfExperience > 1 && user.lastName !== null );
+     .filter( user => user.yearsOfExperience > 1 );
     
    for (const object of output){
+    if (user.lastName !== null){
        const fullName = object.firstName +" "+ object.lastName;
+       const tech = object.tech;}else{
+       const fullName = object.firstName;
        const tech = object.tech;
+       }
        
        finalArray.push({"fullName":fullName,
        "tech":tech});
