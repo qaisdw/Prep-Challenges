@@ -97,22 +97,22 @@ const objLat = (obj) => {
 
 const cvFormatter = (arr) => {
     // write your code here
+    const finalArray =[];
+
+    const output = arr.filter( user => user.yearsOfExperience > 1 );
     
-    const output = arr
-     .filter( user => user.yearsOfExperience > 1 );
-    
-   for (const object of output){
-    if (user.lastName !== null){
-       const fullName = object.firstName +" "+ object.lastName;
-       const tech = object.tech;}else{
-       const fullName = object.firstName;
-       const tech = object.tech;
+   for (let object = 0;object< output.length ; object ++){
+     if (output[object].lastName !== null){
+       let fullName = output[object].firstName +" "+ output[object].lastName;
+       let tech = output[object].tech;
+         finalArray.push({"fullName":fullName,"tech":tech});
+     }else{
+       let fullName = output[object].firstName;
+       let tech = output[object].tech;
+         finalArray.push({"fullName":fullName,"tech":tech});
        }
-       
-       finalArray.push({"fullName":fullName,
-       "tech":tech});
-   }
-     
+  }
+    
    return finalArray;
 };
 // -------------------------------------------------------------------------------------------------------
