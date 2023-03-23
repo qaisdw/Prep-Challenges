@@ -84,7 +84,7 @@ const cvsFiltration = (arr) => {
     
     
  for (let object = 0;object< output.length ; object ++){
-     if (output[object].lastName !== null){
+     if (output[object].LastName !== null){
       let fullName = output[object].firstName +" "+ output[object].LastName;
       let tech = output[object].tech;
          finalArray.push({"fullName":fullName,"tech":tech});
@@ -110,6 +110,7 @@ const cvsFiltration = (arr) => {
 
 const vowelsFiltration = (arr) => {
     // write your code here
+    return arr.filter((el) => el.match(/^[^aeiou]+$/));
 } 
 // -------------------------------------------------------------------------------------------------------
 
