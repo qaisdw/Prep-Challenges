@@ -25,6 +25,8 @@
 
 const LastWord = (str) => {
     // write your code here
+    let lastIndx = str.lastIndexOf(" ");
+    return str.slice(lastIndx + 1);
 }
 // -------------------------------------------------------------------------------------------------------
 
@@ -39,6 +41,8 @@ const LastWord = (str) => {
 
 const LastWord_2 = (str) => {
     // write your code here
+    let lastIndx = str.lastIndexOf(" ");
+    return str.slice(lastIndx + 1);
 }
 // -------------------------------------------------------------------------------------------------------
 
@@ -62,6 +66,23 @@ const LastWord_2 = (str) => {
 
 const replaceWords = (str) => {
     // write your code here
+    let words = str.split(' ');
+    
+    let IndxofI = words.indexOf("I");
+    let Indxofam = words.indexOf("am");
+    let Indxofwas = words.indexOf("was")
+    
+    if (IndxofI !== -1){
+        words.splice(IndxofI, 1, 'We');
+    }
+    if (Indxofam !== -1){
+       words.splice(Indxofam, 1, 'are');
+    }
+    if( Indxofwas !== -1) {
+       words.splice(Indxofwas, 1, 'were');
+    }
+    
+    return words.join(' ');
 }
 // -------------------------------------------------------------------------------------------------------
 
