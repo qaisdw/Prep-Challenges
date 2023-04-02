@@ -11,7 +11,7 @@ describe('Challenge16-01', () => {
 
 
 describe('Challenge16-02', () => {
-    test.skip('Detect face', () => {
+    test('Detect face', () => {
         let inputString = ["hello ^_^ ", "Hi ^_^", "What's up ^_-", "lol"]
         expect(detectFace(inputString)).toStrictEqual(["hello ^_^ ", "Hi ^_^"]);
 
@@ -19,7 +19,7 @@ describe('Challenge16-02', () => {
 })
 
 describe('Challenge16-03', () => {
-    test.skip('Even characters', () => {
+    test('Even characters', () => {
         let input = "coding";
         let output = "cdn"
 
