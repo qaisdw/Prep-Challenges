@@ -1,0 +1,67 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "## Hacker Rank\n\nFor Thursdays you will be solving some selected challenges on HackerRank, please create an account if you don't have then\nFollow the links below:\nread them carefully and solve them then copy-paste your solution below in Code Block"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### **Required**:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#####  [Append And Delete](https://www.hackerrank.com/challenges/append-and-delete/problem?isFullScreen=true)\n\nSolution:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function appendAndDelete(s, t, k) {\n    let sArr = s.split(\"\")\n    let tArr = t.split(\"\")\n    let count = 0\n\n    // To figuring out the number of similar strings\n    //This means the loop will only run as long as the characters in the two strings match at the current index \n    for (let i = 0; i === count && i < Math.max(s.length, t.length); i++) {\n        if (sArr[i] === tArr[i]) {\n            count++\n        }\n    }\n    \n    // To figure out the number of strings I needed to alter (the remaining strings)\n    let tMinusCount = t.length - count\n    let sMinusCount = s.length - count\n\n    // To calculate the remaining the number of moves\n    let STK = k - (tMinusCount + sMinusCount)\n\n    if (tMinusCount + sMinusCount < k && t.length + s.length > k && STK % 2 !== 0) {\n        return \"No\"\n    } else if (tMinusCount + sMinusCount <= k) {\n        return \"Yes\"\n    } else {\n        return \"No\"\n    }\n}\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### **Optional**:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#####  [Encryption](https://www.hackerrank.com/challenges/encryption/problem?isFullScreen=true)\n\nSolution:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Complete the encryption function below.\nfunction encryption(s) {\n    const ceil = Math.ceil(Math.sqrt(s.length));\n     \n    let temp = s;\n    let array = [];\n       \n    while(temp) {\n         array = array.concat(temp.substring(0, ceil));\n         temp = temp.substring(ceil)\n    }\n \n    let result = [];\n   \n    for(let i = 0 ; i < ceil; i++) {\n         result = result.concat(\n             array.reduce((r, v) => {\n                 return r + (v[i] || \"\")\n         }, \"\")\n     )\n    };\n    return result.join(' ');\n }"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#####  [The Time In Words](https://www.hackerrank.com/challenges/the-time-in-words/problem?isFullScreen=true)\n\nSolution:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function timeInWords(h, m) {\n    // Write your code here\n    const array = [\n        \"zero\", \n        \"one\",\n        \"two\",\n        \"three\",\n        \"four\",\n        \"five\",\n        \"six\",\n        \"seven\",\n        \"eight\",\n        \"nine\",\n        \"ten\",\n        \"eleven\",\n        \"twelve\",\n        \"thirteen\",\n        \"fourteen\",\n        \"fifteen\",\n        \"sixteen\",\n        \"seventeen\",\n        \"eighteen\",\n        \"nineteen\",\n        \"twenty\",\n        \"twenty one\",\n        \"twenty two\",\n        \"twenty three\",\n        \"twenty four\",\n        \"twenty five\",\n        \"twenty six\",\n        \"twenty seven\",\n        \"twenty eight\",\n        \"twenty nine\"\n    ]\n    \n    if (m === 0) {\n        return array[h] + \" o' clock\"\n    }\n    if (m === 15) {\n        return 'quarter past' + ' ' + array[h]\n    }\n    if (m === 30) {\n        return 'half past' + ' ' + array[h]\n    }\n    if (m === 45) {\n        return 'quarter to' + ' ' + array[h + 1]\n    }\n    if (m < 30) {\n        if (m === 1) {\n            return array[m] + ' minute past ' + array[h]\n        }\n        return array[m] + ' minutes past ' + array[h]\n    }\n    return array[(60 - m)] + ' minutes to ' + array[h + 1]\n\n}"
+            ],
+            "outputs": []
+        }
+    ]
+}
